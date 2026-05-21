@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cami, amor de mi vida 💙</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Georgia, serif;
+background:linear-gradient(135deg,#1d1b4f,#4b2a7b,#6f4cff);
+background-size:400% 400%;
+animation:fondo 12s ease infinite;
+overflow-x:hidden;
+color:white;
+}
+
+/* FONDO */
+
+@keyframes fondo{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* CORAZONES */
+
+.corazon{
+position:fixed;
+font-size:28px;
+opacity:0.15;
+animation:flotar linear infinite;
+pointer-events:none;
+}
+
+@keyframes flotar{
+
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+
+30%{
+opacity:0.2;
+}
+
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+
+}
+
+/* PANTALLA */
+
+#pantalla{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+position:relative;
+
+}
+
+/* TITULOS */
+
+.titulo{
+
+font-size:38px;
+margin-bottom:12px;
+text-shadow:0 0 15px rgba(255,255,255,0.3);
+
+}
+
+.sub{
+
+font-size:17px;
+margin-bottom:35px;
+color:#efeaff;
+
+}
+
+/* PUNTOS */
+
+.puntos{
+
+display:flex;
+gap:12px;
+margin-bottom:28px;
+
+}
+
+.punto{
+
+width:14px;
+height:14px;
+border-radius:50%;
+background:rgba(255,255,255,0.3);
+
+}
+
+.activo{
+
+background:white;
+box-shadow:0 0 10px white;
+
+}
+
+/* TECLADO */
+
+.pin{
+
+display:grid;
+grid-template-columns:repeat(3,70px);
+gap:14px;
+justify-content:center;
+
+}
+
+.numero{
+
+width:70px;
+height:70px;
+
+border-radius:50%;
+border:none;
+
+background:rgba(255,255,255,0.12);
+
+backdrop-filter:blur(10px);
+
+font-size:24px;
+color:white;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+.numero:hover{
+
+transform:scale(1.06);
+
+background:rgba(255,255,255,0.2);
+
+}
+
+/* CENTRAR 0 */
+
+.cero{
+
+grid-column:2;
+
+}
+
+/* CARTA */
+
+#carta{
+
+display:none;
+
+max-width:900px;
+
+margin:auto;
+
+padding:60px 20px;
+
+}
+
+/* TITULO CARTA */
+
+.titulo-carta{
+
+text-align:center;
+
+font-size:46px;
+
+margin-bottom:10px;
+
+animation:brillo 2s infinite alternate;
+
+}
+
+@keyframes brillo{
+
+from{
+text-shadow:0 0 10px #c2b1ff;
+}
+
+to{
+text-shadow:0 0 25px white;
+}
+
+}
+
+.subtitulo{
+
+text-align:center;
+
+font-size:22px;
+
+line-height:1.8;
+
+margin-bottom:50px;
+
+color:#efeaff;
+
+}
+
+/* TEXTO */
+
+.texto-carta{
+
+display:flex;
+flex-direction:column;
+gap:45px;
+
+}
+
+/* PARRAFOS */
+
+.parrafo{
+
+display:flex;
+align-items:center;
+gap:20px;
+
+}
+
+/* TEXO */
+
+.parrafo p{
+
+flex:1;
+
+font-size:20px;
+
+line-height:2;
+
+text-align:justify;
+
+}
+
+/* FOTOS */
+
+.foto{
+
+width:95px;
+height:95px;
+
+object-fit:cover;
+
+border-radius:18px;
+
+box-shadow:0 0 18px rgba(255,255,255,0.18);
+
+opacity:0;
+
+animation:fade 9s infinite;
+
+}
+
+/* APARECEN UNA POR UNA */
+
+.f1{
+animation-delay:0s;
+}
+
+.f2{
+animation-delay:3s;
+}
+
+.f3{
+animation-delay:6s;
+}
+
+/* ANIMACION FOTOS */
+
+@keyframes fade{
+
+0%{
+opacity:0;
+transform:scale(0.8);
+}
+
+15%{
+opacity:1;
+transform:scale(1);
+}
+
+45%{
+opacity:1;
+}
+
+60%{
+opacity:0;
+transform:scale(0.9);
+}
+
+100%{
+opacity:0;
+}
+
+}
+
+/* DESTELLOS */
+
+.destello{
+
+position:fixed;
+font-size:26px;
+animation:explosion 2s linear forwards;
+pointer-events:none;
+
+}
+
+@keyframes explosion{
+
+0%{
+transform:scale(0);
+opacity:1;
+}
+
+100%{
+transform:translateY(-180px) scale(2);
+opacity:0;
+}
+
+}
+
+/* FIRMA */
+
+.firma{
+
+text-align:center;
+
+font-size:30px;
+
+margin-top:50px;
+
+text-shadow:0 0 12px rgba(255,255,255,0.3);
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MUSICA -->
+
+<audio autoplay loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<!-- CORAZONES -->
+
+<div class="corazon" style="left:10%; animation-duration:12s;">💜</div>
+<div class="corazon" style="left:30%; animation-duration:15s;">💙</div>
+<div class="corazon" style="left:50%; animation-duration:18s;">💜</div>
+<div class="corazon" style="left:70%; animation-duration:14s;">💙</div>
+<div class="corazon" style="left:90%; animation-duration:16s;">💜</div>
+
+<!-- PANTALLA -->
+
+<div id="pantalla">
+
+<div class="titulo">
+Nuestra Clave 💌
+</div>
+
+<div class="sub">
+Solo tú puedes abrir esto 💙
+</div>
+
+<div class="puntos">
+<div class="punto"></div>
+<div class="punto"></div>
+<div class="punto"></div>
+<div class="punto"></div>
+</div>
+
+<div class="pin">
+
+<button class="numero" onclick="agregar(1)">1</button>
+<button class="numero" onclick="agregar(2)">2</button>
+<button class="numero" onclick="agregar(3)">3</button>
+
+<button class="numero" onclick="agregar(4)">4</button>
+<button class="numero" onclick="agregar(5)">5</button>
+<button class="numero" onclick="agregar(6)">6</button>
+
+<button class="numero" onclick="agregar(7)">7</button>
+<button class="numero" onclick="agregar(8)">8</button>
+<button class="numero" onclick="agregar(9)">9</button>
+
+<button class="numero cero" onclick="agregar(0)">0</button>
+
+</div>
+
+</div>
+
+<!-- CARTA -->
+
+<div id="carta">
+
+<div class="titulo-carta">
+Algo especial para ti 💖
+</div>
+
+<div class="subtitulo">
+Mi caleña favorita 💕<br>
+y la única dueña de mi corazón 💌
+</div>
+
+<div class="texto-carta">
+
+<div class="parrafo">
+
+<p>
+No sé cómo explicarte todo lo que causas en mí, porque sinceramente siento que las palabras se quedan cortas cuando se trata de ti. Desde que llegaste a mi vida todo cambió de una manera tan bonita que todavía me cuesta creerlo.
+</p>
+
+<img src="foto1.jpg" class="foto f1">
+
+</div>
+
+<div class="parrafo">
+
+<p>
+Contigo encontré tranquilidad, felicidad y una conexión que jamás había sentido antes. Me encanta absolutamente todo de ti: tu sonrisa, tus ocurrencias y la forma en la que me haces sentir querido incluso a la distancia.
+</p>
+
+<img src="foto2.jpg" class="foto f2">
+
+</div>
+
+<div class="parrafo">
+
+<p>
+Gracias por existir, por llegar a mi vida y por convertirte poco a poco en mi lugar favorito. Pase lo que pase, siempre voy a cuidar esto tan bonito que tenemos, porque tú eres y siempre vas a ser alguien demasiado especial para mi corazón 💙
+</p>
+
+<img src="foto3.jpg" class="foto f3">
+
+</div>
+
+</div>
+
+<div class="firma">
+Con todo mi amor 💜
+</div>
+
+</div>
+
+<script>
+
+let clave = "";
+
+function agregar(num){
+
+if(clave.length < 4){
+
+clave += num;
+
+document.querySelectorAll(".punto")[clave.length - 1].classList.add("activo");
+
+}
+
+if(clave.length === 4){
+
+setTimeout(verificar,300);
+
+}
+
+}
+
+function verificar(){
+
+if(clave === "2340"){
+
+document.getElementById("pantalla").style.display="none";
+
+document.getElementById("carta").style.display="block";
+
+explosion();
+
+}else{
+
+clave="";
+
+document.querySelectorAll(".punto").forEach(p=>p.classList.remove("activo"));
+
+}
+
+}
+
+/* DESTELLOS */
+
+function explosion(){
+
+for(let i=0;i<25;i++){
+
+let heart=document.createElement("div");
+
+heart.classList.add("destello");
+
+heart.innerHTML=Math.random()>0.5?"💜":"💙";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.top=Math.random()*100+"vh";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},2000);
+
+}
+
+}
+
+</script>
+
+</body>
+  </html>
